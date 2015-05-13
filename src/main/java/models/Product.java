@@ -2,9 +2,12 @@ package models;
 
 
 public class Product {
-    String name;
-    public Product(String name){
+    private String name;
+    private Double price;
+
+    public Product(String name, Double price){
         this.name = name;
+        this.price = price;
     }
 
     @Override
@@ -14,12 +17,16 @@ public class Product {
 
         Product product = (Product) o;
 
-        return name.equals(product.name);
+        return name.equals(product.name) && price.equals(product.price);
 
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return name.hashCode() & price.hashCode();
+    }
+
+    public Double getPrice() {
+        return price;
     }
 }

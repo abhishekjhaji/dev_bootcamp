@@ -22,4 +22,8 @@ public class Cart {
     public ProductList getProducts() {
         return products;
     }
+
+    public boolean isEmpty() {
+        return products.isEmpty();
+    }
 }

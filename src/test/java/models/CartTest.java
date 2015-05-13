@@ -11,7 +11,7 @@ public class CartTest {
     @Test
     public void testIfQuantityIncreaseOnAddingSameProduct() throws Exception {
         Cart cart = new Cart();
-        Product product = new Product("Sample");
+        Product product = new Product("Sample",25d);
         cart.addProduct(product);
         cart.addProduct(product);
         assertEquals(2,cart.getProducts().getQuantity(product));
@@ -19,7 +19,7 @@ public class CartTest {
     @Test
     public void testIfQuantityIsOneOnAddingNewProduct() throws Exception {
         Cart cart = new Cart();
-        Product product = new Product("Sample");
+        Product product = new Product("Sample",25d);
         cart.addProduct(product);
         assertEquals(1, cart.getProducts().getQuantity(product));
     }
@@ -27,7 +27,7 @@ public class CartTest {
     @Test
     public void testIfCartDisplaysProductList(){
         ProductList products = new ProductList();
-        products.add(new Product("Sample"));
+        products.add(new Product("Sample",25d));
         Cart cart = new Cart(products);
         assertEquals(products, cart.getProducts());
     }

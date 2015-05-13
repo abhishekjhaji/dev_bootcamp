@@ -2,6 +2,7 @@ package models;
 
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class ProductList {
     HashMap<Product,Integer> products = new HashMap<Product,Integer>();
@@ -38,5 +39,20 @@ public class ProductList {
     @Override
     public int hashCode() {
         return products.hashCode();
+    }
+
+    public boolean isEmpty() {
+        return products.isEmpty();
+    }
+
+
+
+    public Double totalValue() {
+        double total = 0d;
+        Set<Product> productSet = products.keySet();
+        for(Product product: productSet){
+            total += products.get(product) * product.getPrice();
+        }
+        return total;
     }
 }
