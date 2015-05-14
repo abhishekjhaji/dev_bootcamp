@@ -11,23 +11,25 @@ import hello.service.NotificationService;
 import hello.strategies.EmailNotificationStrategy;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.transaction.Transactional;
 
 /**
  * Created by abhishekkumarjha on 13/05/15.
  */
 
-
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-
+@Transactional
 public class CustomerTest {
 
     @Test
-    @Ignore
     public void testCreateCustomerWithValidData(){
         Customer customer = new Customer(1,"manish@katoch.com");
         customer.saveIt();
-        //Customer savedCustomer = Customer.getById(1);
-        //Assert.assertEquals(customer,savedCustomer);
+        Customer savedCustomer = Customer.REPO.find(1L);
+        Assert.assertEquals(customer,savedCustomer);
     }
 
     @Test(expected = Exception.class)

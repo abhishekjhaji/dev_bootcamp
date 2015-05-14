@@ -10,14 +10,14 @@ import javax.persistence.*;
  */
 
 @Table(name="customer")
+@Entity
 public class Customer extends BaseModel<Customer> {
 
     public final static BaseModel.Repo<Customer> REPO = new BaseModel.Repo<Customer>(Customer.class);
 
+    @Id
     private int id;
     private String emailAddress;
-
-
 
     @OneToOne
     @JoinColumn(name="cartId", referencedColumnName = "id")

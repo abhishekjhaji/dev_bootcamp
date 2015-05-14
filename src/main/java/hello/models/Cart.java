@@ -1,15 +1,25 @@
 package hello.models;
 
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Table(name="cart")
+@Entity
 public class Cart {
-    private ProductList products;
 
+    @Id
+    private int id;
+
+    @OneToOne
+    @JoinColumn(name="lineItemId", referencedColumnName = "lineItemId")
+    private CartLineItem cartLineItem;
 
     public Cart() {
         this.products = new ProductList();
     }
+
+    @Transient
+    private ProductList products;
 
     public Cart(ProductList products) {
         this.products = products;

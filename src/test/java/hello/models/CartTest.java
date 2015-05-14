@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 /**
  * Created by abhishekkumarjha on 12/05/15.
  */
-@Ignore
 public class CartTest {
 
 

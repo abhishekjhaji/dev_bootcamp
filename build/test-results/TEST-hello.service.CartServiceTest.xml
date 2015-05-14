@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hello.service.CartServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-05-14T11:42:28" hostname="INkmanish.local" time="0.001">
-  <properties/>
-  <testcase name="testAddToCartReturnsUpdatedCartIfPresent" classname="hello.service.CartServiceTest" time="0.001"/>
-  <testcase name="testAddToCartCreatesCartIfNotPresent" classname="hello.service.CartServiceTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
